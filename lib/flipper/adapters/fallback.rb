@@ -5,7 +5,7 @@ require 'delegate'
 module Flipper
   module Adapters
     class Fallback < SimpleDelegator
-      VERSION = '0.0.1'
+      VERSION = '0.0.2'
       def initialize(primary_adapter, fallback_adapter = Flipper::Adapters::Memory.new)
         super(primary_adapter)
         @primary_adapter = primary_adapter
