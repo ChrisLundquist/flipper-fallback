@@ -5,6 +5,11 @@ If the primary adapter fails by throwing an exception, the secondary adapter wil
 By default, the fall back adapter is the in memory adapter which should not fail.
 However, by default, the memory adapter is empty and ***everything will fail closed***
 
+####What? Why do I care?
+Maybe you're using an a flipper adapter like [flipper-redis](https://github.com/jnunemaker/flipper-redis).
+If redis becomes unreachable, your site will 500. Flipper-fallback lets you handle that case.
+Graceful degredation of service is often desirable.
+
 ## Installation
 
 Add this line to your application's Gemfile:
