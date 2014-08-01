@@ -35,7 +35,12 @@ describe Flipper::Adapters::Fallback do
       Redis.new(options)
     }
 
-    subject { described_class.new(Flipper::Adapters::Redis.new(client)) }
+    let(:on_error) do
+      lambda do |error, primary_adapter, fallback_adapter|
+        # noop
+      end
+    end
+    subject { described_class.new(Flipper::Adapters::Redis.new(client), { :on_error => on_error, :timeout => 0.1 }) }
 
     it_should_behave_like 'a flipper adapter'
   end
