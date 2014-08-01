@@ -40,7 +40,7 @@ template[:search].enable
 template[:experimental].disable
 
 # Template has modified our "memory" adapter to how we want
-adapter = Flipper::Adapters::Fallback.new(Flipper::Adapters::Redis.new(App.redis, options = {}, memory)
+adapter = Flipper::Adapters::Fallback.new(Flipper::Adapters::Redis.new(App.redis), options = {}, memory)
 ```
 
 Advanced usage might look like this
